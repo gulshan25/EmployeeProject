@@ -1,0 +1,32 @@
+mkvirtualenv django3 --python=/usr/bin/python3.8
+
+pip freeze
+
+unzip empPrj.zip
+
+pip install django-crispy-forms
+
+
+/////
+import os
+import sys
+
+# assuming your django settings file is at '/home/gulshantanny/mysite/mysite/settings.py'
+# and your manage.py is is at '/home/gulshantanny/mysite/manage.py'
+path = '/home/gulshantanny/empPrj'
+if path not in sys.path:
+    sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'empPrj.settings'
+
+# then:
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+
+////
+
+/home/gulshantanny/.virtualenvs/django3
+
+////
+/home/gulshantanny/empPrj/static
+/////
